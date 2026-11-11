@@ -1,10 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import IconButton from './component/IconButton';
+import { COLORS } from './constants/colors';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <IconButton icon="arrow-left" onPress={() => console.log('back')} />
+      <IconButton
+        icon="user"
+        backgroundColor={COLORS.backgroundDark}
+        pressedColor="#CF9310"
+        iconColor={COLORS.white}
+      />
+      <IconButton
+        icon="plus"
+        size={40}
+        iconSize={18}
+        backgroundColor={COLORS.black}
+        pressedColor="#333333"
+        iconColor={COLORS.white}
+      />
       <StatusBar style="auto" />
     </View>
   );
@@ -13,8 +29,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: COLORS.background,
     alignItems: 'center',
     justifyContent: 'center',
+    gap: 20,
   },
 });
