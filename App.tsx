@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
-import IconButton from './component/IconButton';
+import IconButton from './components/IconButton';
 import { COLORS } from './constants/colors';
 
 export default function App() {
