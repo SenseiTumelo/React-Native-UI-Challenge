@@ -1,84 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
-import Header from './components/Header';
-import CategoryTab from './components/CategoryTab';
-import SizeOption from './components/SizeOption';
-import ProductImage from './components/ProductImage';
-import { COLORS } from './constants/colors';
-
-const SIZES = [30, 60, 90];
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import ProductScreen from './screens/ProductScreen';
 
 export default function App() {
-  const [category, setCategory] = useState<'relax' | 'sleep'>('relax');
-  const [selectedSize, setSelectedSize] = useState(30);
-
   return (
-    <View style={styles.container}>
-      <Header cartCount={3} />
-
-      <View style={styles.selectors}>
-        <View style={styles.tabs}>
-  
-<CategoryTab
-  label="Relax"
-  icon="spa-outline"
-  selected={category === 'relax'}
-  onPress={() => setCategory('relax')}
-/>
-          <CategoryTab
-            label="Sleep"
-            icon="moon-waning-crescent"
-            selected={category === 'sleep'}
-            onPress={() => setCategory('sleep')}
-          />
-        </View>
-
-        <View style={styles.sizes}>
-          {SIZES.map((size) => (
-            <SizeOption
-              key={size}
-              value={size}
-              selected={selectedSize === size}
-              onPress={() => setSelectedSize(size)}
-            />
-          ))}
-        </View>
-      </View>
-
-      <View style={styles.imageArea}>
-        <ProductImage source={require('./assets/xefag-relax.png')} widthRatio={0.7} />
-      </View>
-
+    <SafeAreaProvider>
+      <ProductScreen />
       <StatusBar style="dark" />
-    </View>
+    </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: COLORS.background,
-    paddingTop: 60,
-    paddingHorizontal: 20,
-  },
-selectors: {
-  flexDirection: 'row',
-  justifyContent: 'space-between',
-  alignItems: 'flex-start',
-  marginTop: 30,
-},
-tabs: {
-  flexDirection: 'row',
-  gap: 24,
-  marginTop: 14,
-},
-  sizes: {
-    gap: 14,
-  },
-  imageArea: {
-    flex: 1,
-    justifyContent: 'center',
-    marginTop: -70,
-  },
-});
