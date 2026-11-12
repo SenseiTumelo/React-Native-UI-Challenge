@@ -4,6 +4,7 @@ import { StyleSheet, View } from 'react-native';
 import Header from './components/Header';
 import CategoryTab from './components/CategoryTab';
 import SizeOption from './components/SizeOption';
+import ProductImage from './components/ProductImage';
 import { COLORS } from './constants/colors';
 
 const SIZES = [30, 60, 90];
@@ -44,6 +45,10 @@ export default function App() {
         </View>
       </View>
 
+      <View style={styles.imageArea}>
+        <ProductImage source={require('./assets/xefag-relax.png')} />
+      </View>
+
       <StatusBar style="dark" />
     </View>
   );
@@ -67,5 +72,10 @@ const styles = StyleSheet.create({
   },
   sizes: {
     gap: 14,
+  },
+  imageArea: {
+    flex: 1,
+    justifyContent: 'center',
+    marginTop: -70,
   },
 });
