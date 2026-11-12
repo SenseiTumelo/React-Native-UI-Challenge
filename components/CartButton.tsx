@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import IconButton from './IconButton';
 import { COLORS } from '../constants/colors';
+import { FONTS } from '../constants/fonts';
 
 type CartButtonProps = {
   count: number;
@@ -34,9 +35,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: 4,
   },
-  badgeText: {
-    color: COLORS.white,
-    fontSize: 11,
-    fontWeight: '700',
-  },
+badgeText: {
+  color: COLORS.white,
+  fontSize: 11,
+  fontFamily: FONTS.bold,
+},
+  
 });

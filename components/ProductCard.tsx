@@ -3,6 +3,7 @@ import { StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import QuantitySelector from './QuantitySelector';
 import PrimaryButton from './PrimaryButton';
 import { COLORS } from '../constants/colors';
+import { FONTS } from '../constants/fonts';
 
 type ProductCardProps = {
   title: string;
@@ -56,15 +57,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     paddingTop: 28,
   },
-  title: {
-    fontWeight: '700',
-    color: COLORS.black,
-  },
-  dosage: {
-    marginTop: 8,
-    fontSize: 16,
-    color: COLORS.grey,
-  },
+ title: {
+  fontFamily: FONTS.bold,
+  color: COLORS.black,
+},
+dosage: {
+  marginTop: 8,
+  fontSize: 16,
+  fontFamily: FONTS.regular,
+  color: COLORS.grey,
+},
   row: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -72,8 +74,8 @@ const styles = StyleSheet.create({
     marginTop: 24,
     marginBottom: 24,
   },
-  price: {
-    fontWeight: '700',
-    color: COLORS.black,
-  },
+price: {
+  fontFamily: FONTS.bold,
+  color: COLORS.black,
+},
 });

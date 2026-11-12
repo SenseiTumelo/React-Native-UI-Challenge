@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { COLORS } from '../constants/colors';
+import { FONTS } from '../constants/fonts';
 
 type LogoProps = {
   size?: number;
@@ -48,8 +49,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 8,
   },
-  text: {
-    fontWeight: '700',
-    letterSpacing: 1,
-  },
+text: {
+  fontFamily: FONTS.bold,
+  letterSpacing: 1,
+},
+  
 });

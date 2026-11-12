@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import IconButton from './IconButton';
 import { COLORS } from '../constants/colors';
+import { FONTS } from '../constants/fonts';
 
 type QuantitySelectorProps = {
   value: number;
@@ -47,11 +48,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 18,
   },
-  value: {
-    fontSize: 22,
-    fontWeight: '500',
-    color: COLORS.black,
-    minWidth: 24,
-    textAlign: 'center',
-  },
+value: {
+  fontSize: 22,
+  fontFamily: FONTS.medium,
+  color: COLORS.black,
+  minWidth: 24,
+  textAlign: 'center',
+},
 });

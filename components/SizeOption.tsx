@@ -1,6 +1,7 @@
 import React from 'react';
 import { Pressable, StyleSheet, Text } from 'react-native';
 import { COLORS } from '../constants/colors';
+import { FONTS } from '../constants/fonts';
 
 type SizeOptionProps = {
   value: number;
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  text: {
-    fontWeight: '600',
-  },
+text: {
+  fontFamily: FONTS.semibold,
+},
 });

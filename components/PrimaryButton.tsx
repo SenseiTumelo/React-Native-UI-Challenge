@@ -2,6 +2,7 @@ import React from 'react';
 import { Pressable, StyleSheet, Text } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { COLORS } from '../constants/colors';
+import { FONTS } from '../constants/fonts';
 
 type PrimaryButtonProps = {
   title: string;
@@ -43,8 +44,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 10,
   },
-  title: {
-    fontSize: 17,
-    fontWeight: '600',
-  },
+title: {
+  fontSize: 17,
+  fontFamily: FONTS.semibold,
+},
 });

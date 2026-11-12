@@ -2,6 +2,7 @@ import React from 'react';
 import { Pressable, StyleSheet, Text } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { COLORS } from '../constants/colors';
+import { FONTS } from '../constants/fonts';
 
 type CategoryTabProps = {
   label: string;
@@ -39,8 +40,8 @@ const styles = StyleSheet.create({
   pressed: {
     opacity: 0.6,
   },
-  label: {
-    fontSize: 16,
-    fontWeight: '500',
-  },
+label: {
+  fontSize: 16,
+  fontFamily: FONTS.medium,
+},
 });
