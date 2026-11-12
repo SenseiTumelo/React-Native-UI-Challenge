@@ -5,4 +5,5 @@ export const COLORS = {
   white: '#FFFFFF',
   grey: '#9A9A9A',
   buttonYellow: '#F9B91A',
+  inactive: '#c9961a'
 } as const;
