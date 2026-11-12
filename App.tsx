@@ -19,12 +19,13 @@ export default function App() {
 
       <View style={styles.selectors}>
         <View style={styles.tabs}>
-          <CategoryTab
-            label="Relax"
-            icon="flower-lotus"
-            selected={category === 'relax'}
-            onPress={() => setCategory('relax')}
-          />
+  
+<CategoryTab
+  label="Relax"
+  icon="spa-outline"
+  selected={category === 'relax'}
+  onPress={() => setCategory('relax')}
+/>
           <CategoryTab
             label="Sleep"
             icon="moon-waning-crescent"
@@ -46,7 +47,7 @@ export default function App() {
       </View>
 
       <View style={styles.imageArea}>
-        <ProductImage source={require('./assets/xefag-relax.png')} />
+        <ProductImage source={require('./assets/xefag-relax.png')} widthRatio={0.7} />
       </View>
 
       <StatusBar style="dark" />
@@ -61,15 +62,17 @@ const styles = StyleSheet.create({
     paddingTop: 60,
     paddingHorizontal: 20,
   },
-  selectors: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: 30,
-  },
-  tabs: {
-    flexDirection: 'row',
-    gap: 24,
-  },
+selectors: {
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  alignItems: 'flex-start',
+  marginTop: 30,
+},
+tabs: {
+  flexDirection: 'row',
+  gap: 24,
+  marginTop: 14,
+},
   sizes: {
     gap: 14,
   },
