@@ -13,6 +13,9 @@ type ProductCardProps = {
   onQuantityChange: (newValue: number) => void;
   onBuyPress?: () => void;
   bottomInset?: number;
+  buttonColor?: string;
+buttonPressedColor?: string;
+buttonTextColor?: string;
 };
 
 export default function ProductCard({
@@ -22,6 +25,9 @@ export default function ProductCard({
   quantity,
   onQuantityChange,
   onBuyPress,
+  buttonColor,
+buttonPressedColor,
+buttonTextColor,
   bottomInset = 0,
 }: ProductCardProps) {
   const { width } = useWindowDimensions();
@@ -44,7 +50,14 @@ export default function ProductCard({
         <QuantitySelector value={quantity} onChange={onQuantityChange} />
       </View>
 
-      <PrimaryButton title="Buy Now" icon="shopping-cart" onPress={onBuyPress} />
+<PrimaryButton
+  title="Buy Now"
+  icon="shopping-cart"
+  onPress={onBuyPress}
+  backgroundColor={buttonColor}
+  pressedColor={buttonPressedColor}
+  textColor={buttonTextColor}
+/>
     </View>
   );
 }

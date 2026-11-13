@@ -9,6 +9,7 @@ type CategoryTabProps = {
   icon: keyof typeof MaterialCommunityIcons.glyphMap;
   selected: boolean;
   onPress: () => void;
+  inactiveColor?: string;
 };
 
 export default function CategoryTab({
@@ -16,8 +17,9 @@ export default function CategoryTab({
   icon,
   selected,
   onPress,
+  inactiveColor = COLORS.inactive,
 }: CategoryTabProps) {
-  const color = selected ? COLORS.black : COLORS.inactive;
+  const color = selected ? COLORS.black : inactiveColor;
 
   return (
     <Pressable

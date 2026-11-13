@@ -7,6 +7,8 @@ import { COLORS } from '../constants/colors';
 
 type HeaderProps = {
   cartCount: number;
+  profileColor?: string;
+  profilePressedColor?: string;
   onBackPress?: () => void;
   onProfilePress?: () => void;
   onCartPress?: () => void;
@@ -14,6 +16,8 @@ type HeaderProps = {
 
 export default function Header({
   cartCount,
+  profileColor = COLORS.backgroundDark,
+  profilePressedColor = '#CF9310',
   onBackPress,
   onProfilePress,
   onCartPress,
@@ -26,13 +30,13 @@ export default function Header({
       </View>
 
       <View style={styles.group}>
-        <IconButton
-          icon="user"
-          backgroundColor={COLORS.backgroundDark}
-          pressedColor="#CF9310"
-          iconColor={COLORS.white}
-          onPress={onProfilePress}
-        />
+<IconButton
+  icon="user"
+  backgroundColor={profileColor}
+  pressedColor={profilePressedColor}
+  iconColor={COLORS.white}
+  onPress={onProfilePress}
+/>
         <CartButton count={cartCount} onPress={onCartPress} />
       </View>
     </View>

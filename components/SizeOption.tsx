@@ -8,6 +8,8 @@ type SizeOptionProps = {
   selected: boolean;
   onPress: () => void;
   size?: number;
+  idleBackground?: string;
+  idleTextColor?: string;
 };
 
 export default function SizeOption({
@@ -15,6 +17,8 @@ export default function SizeOption({
   selected,
   onPress,
   size = 52,
+  idleBackground = COLORS.backgroundDark,
+  idleTextColor = COLORS.inactive,
 }: SizeOptionProps) {
   return (
     <Pressable
@@ -25,7 +29,7 @@ export default function SizeOption({
           width: size,
           height: size,
           borderRadius: size / 2,
-          backgroundColor: selected ? COLORS.black : COLORS.backgroundDark,
+          backgroundColor: selected ? COLORS.black : idleBackground,
           opacity: pressed ? 0.7 : 1,
         },
       ]}
@@ -35,7 +39,7 @@ export default function SizeOption({
           styles.text,
           {
             fontSize: size * 0.42,
-            color: selected ? COLORS.white : COLORS.inactive,
+            color: selected ? COLORS.white : idleTextColor,
           },
         ]}
       >
