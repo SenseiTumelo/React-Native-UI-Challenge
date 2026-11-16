@@ -29,6 +29,6 @@ export const THEMES: Record<Category, Theme> = {
     buttonBackground: '#9A0B30',
     buttonPressed: '#7E0725',
     buttonText: '#FFFFFF',
-    image: require('../assets/xefag-sleep.png'),
+    image: require('../assets/Xefag-sleep.png'),
   },
 };
